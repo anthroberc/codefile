@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codefile"
+version = "1.0.0"
+description = "A CLI tool to bundle entire projects into a single AI-friendly context file."
+authors = [
+    { name = "Anthroberc" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["ai", "gemini", "codefile", "llm", "context", "prompt-engineering", "bundler", "devtools", "chatgpt", "claude"]
+
+[project.scripts]
+codefile = "codefile:main"
+
+[tool.setuptools]
+py-modules = ["codefile"]
