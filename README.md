@@ -1,8 +1,6 @@
 codefile – Python Project Packager
 
-=====================================
 What Is codefile?
-=====================================
 
 codefile is a Python package that scans your project directory
 and packs everything into a single output file named:
@@ -11,7 +9,6 @@ and packs everything into a single output file named:
 
 It includes:
 - Project folder structure (tree view)
-- File metadata (SHA-256 ID)
 - File contents
 - Total size (in MB)
 - UTC creation timestamp
@@ -21,24 +18,21 @@ This is useful for:
 - Sharing full source code as one file
 - Simple archiving
 - Backup purposes
+- AI context
 
 
-=====================================
-Installation
-=====================================
+# Installation
 
 If installed from source:
 
     pip install .
 
-installing a package:
+installing as a package:
 
     pip install codefile
 
 
-=====================================
-How To Use
-=====================================
+# How To Use
 
 Step 1:
 Open terminal inside your project folder.
@@ -56,7 +50,6 @@ After execution, a new file will appear:
 That file contains your full project snapshot.
 
 
-=====================================
 What Gets Packed?
 =====================================
 
