@@ -126,9 +126,12 @@ def main():
 
                     # Read 2: Content Writing
                     out.write(f"FILE_START {rel} {f_id}\n")
-                    with f_path.open("rb") as rb:
-                        while chunk := rb.read(IO_CHUNK):
-                            out.write(chunk.decode("utf-8", errors="replace"))
+                    if f_path.stat().st_size == 0:
+                        out.write("EMPTY")
+                    else:
+                        with f_path.open("rb") as rb:
+                            while chunk := rb.read(IO_CHUNK):
+                                out.write(chunk.decode("utf-8", errors="replace"))
                     out.write(f"\nFILE_END {rel} {f_id}\n\n")
                     
                 except Exception as e:

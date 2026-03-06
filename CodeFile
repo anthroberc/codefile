@@ -1,0 +1,157 @@
+ROOT_NAME codefile
+CREATED_UTC 2026-03-06T14:53:14Z
+TOTAL_SIZE_MB 0.00
+
+START_STRUCTURE
+codefile/
+|-- .github/
+|   \-- workflows/
+|       \-- python-publish.yml
+|-- .gitignore
+|-- No LICENSE
+|-- README.md
+|-- codefile.py
+\-- pyproject.toml
+END_STRUCTURE
+
+FILE_START .gitignore b56fdb99d7c6
+.github
+.git
+FILE_END .gitignore b56fdb99d7c6
+
+FILE_START No LICENSE 0f04eae7607d
+Copyright (c) 2026 Anthroberc
+
+All rights reserved.
+
+Permission is granted to use this software solely for private, personal viewing and execution. 
+
+Any form of modification, reverse engineering, redistribution, sublicensing, public sharing, hosting, or commercial use — in whole or in part — is strictly prohibited without prior written permission from the copyright holder.
+
+Unauthorized use will result in legal action.
+
+FILE_END No LICENSE 0f04eae7607d
+
+FILE_START README.md 623a3224fa8a
+codefile – Python Project Packager
+
+# What Is codefile?
+
+codefile is a Python package that scans your project directory
+and packs everything into a single output file named:
+
+    CodeFile
+
+It includes:
+- Project folder structure (tree view)
+- File contents
+- Total size (in MB)
+- UTC creation timestamp
+
+This is useful for:
+- Creating project snapshots
+- Sharing full source code as one file
+- Simple archiving
+- Backup purposes
+- AI context
+
+
+# Installation
+
+If installed from source:
+
+    pip install .
+
+installing as a package:
+
+    pip install codefile
+
+
+# How To Use
+
+Step 1:
+Open terminal inside your project folder.
+
+Step 2:
+Run:
+
+    codefile
+
+Step 3:
+After execution, a new file will appear:
+
+    CodeFile
+
+That file contains your full project snapshot.
+
+
+# What Gets Packed?
+
+✔ All regular files in the current directory  
+✔ Subdirectories  
+✔ File contents  
+✔ Directory structure  
+
+Automatically ignored:
+- .git folder
+- The generated CodeFile
+- The package script itself
+- Patterns listed in .gitignore (if present) (Basic)
+
+
+# Output File Structure
+
+The generated file contains:
+
+ROOT_NAME <project_name>
+CREATED_UTC <timestamp>
+TOTAL_SIZE_MB <size>
+
+START_STRUCTURE
+FOLDER TREE
+END_STRUCTURE
+
+FILE_START <relative_path> <file_id>
+CONTENT
+FILE_END <relative_path> <file_id>
+
+
+
+# Technical Details
+
+- Uses SHA-256 hashing (first 12 characters as ID)
+- Reads files in chunks (memory safe)
+- Skips unreadable or broken files safely
+- Writes output using UTF-8 encoding
+
+# Requirements
+
+- Python 3.8+
+- No external dependencies (uses standard library only)
+
+FILE_END README.md 623a3224fa8a
+
+FILE_START pyproject.toml b7aeac9f3d60
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codefile"
+version = "1.0.2"
+description = "A CLI tool to bundle entire projects into a single AI-friendly context file."
+authors = [
+    { name = "Anthroberc" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+keywords = ["ai", "gemini", "codefile", "llm", "context", "prompt-engineering", "bundler", "devtools", "chatgpt", "claude", "grok", "package", "pack", "CodeFile"]
+
+[project.scripts]
+codefile = "codefile:main"
+
+[tool.setuptools]
+py-modules = ["codefile"]
+
+FILE_END pyproject.toml b7aeac9f3d60
+
